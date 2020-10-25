@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LicForms - Новая форма</title>
+  </head>
+  <body id="body">
+    <input type="file" onchange="readFile(this)">
+
+    <script>
+    function readFile(input) {
+      let doc = document.querySelectorAll("#body")[0]
+      let file = input.files[0];
+
+      let reader = new FileReader();
+
+      reader.readAsText(file);
+
+      reader.onload = function() {
+        doc.innerHTML = reader.result;
+      };
+
+      reader.onerror = function() {
+        console.log(reader.error);
+      };
+
+    }
+    </script>
+    </defs>
+    </svg>
+  </body>
+</html>
