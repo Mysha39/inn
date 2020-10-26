@@ -11,7 +11,7 @@
     function readFile(input) {
       let doc = document.querySelectorAll("#body")[0]
       let file = input.files[0];
-
+      console.log(file)
       let reader = new FileReader();
 
       reader.readAsText(file);
